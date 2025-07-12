@@ -63,7 +63,7 @@ Este proyecto es un sistema web desarrollado con **Python (Flask)** que permite 
 
 1. Clona el repositorio:
 ```bash
-git clone https://github.com/tuusuario/pizzeria-delizia.git
+git clone https://github.com/Adrihan249/pizzeria-delizia.git
 cd pizzeria-delizia
 ```
 
