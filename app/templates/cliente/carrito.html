@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Carrito - Pizzería Delizia</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #fff8f0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        margin-top: 60px;
+      }
+
+      h1 {
+        font-weight: bold;
+        color: #e63946;
+      }
+
+      table {
+        background-color: #fff;
+      }
+
+      .btn-success {
+        background-color: #2a9d8f;
+        border-color: #2a9d8f;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 30px;
+      }
+
+      .btn-success:hover {
+        background-color: #21867a;
+        border-color: #21867a;
+      }
+
+      .btn-danger {
+        background-color: #e63946;
+        border-color: #e63946;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 30px;
+      }
+
+      .btn-danger:hover {
+        background-color: #c62828;
+        border-color: #c62828;
+      }
+
+      .form-label {
+        font-weight: bold;
+        color: #333;
+      }
+
+      .total {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #264653;
+      }
+
+      .icon-cart {
+        color: #e63946;
+        margin-right: 10px;
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        .total {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center mb-4">
+        <i class="fas fa-shopping-cart icon-cart"></i>Tu Pedido
+      </h1>
+
+      <table class="table table-striped table-bordered align-middle">
+        <thead class="table-light">
+          <tr>
+            <th>Producto</th>
+            <th>Precio Unitario</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in productos %}
+          <tr>
+            <td>{{ item.producto.nombre }}</td>
+            <td>S/ {{ item.producto.precio }}</td>
+            <td>{{ item.cantidad }}</td>
+            <td><strong>S/ {{ item.subtotal }}</strong></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <div class="text-end total mb-4">Total: <span>S/ {{ total }}</span></div>
+
+      <form method="POST">
+        <div class="mb-3">
+          <label for="direccion" class="form-label"
+            >Dirección de entrega:</label
+          >
+          <input
+            type="text"
+            name="direccion"
+            id="direccion"
+            required
+            class="form-control"
+            placeholder="Av. Siempre Viva 742"
+          />
+        </div>
+
+        <div class="d-flex justify-content-between">
+          <button
+            type="submit"
+            name="accion"
+            value="cancelar"
+            class="btn btn-danger"
+          >
+            <i class="fas fa-times-circle me-1"></i> Cancelar Pedido
+          </button>
+
+          <button
+            type="submit"
+            name="accion"
+            value="confirmar"
+            class="btn btn-success"
+          >
+            <i class="fas fa-check-circle me-1"></i> Confirmar Compra
+          </button>
+        </div>
+      </form>
+    </div>
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("form");
+    const direccionInput = document.getElementById("direccion");
+    const cancelarBtn = document.querySelector("button[name='accion'][value='cancelar']");
+
+    cancelarBtn.addEventListener("click", () => {
+      // Quita el required solo si se va a cancelar
+      direccionInput.removeAttribute("required");
+    });
+  });
+</script>
+
+  </body>
+</html>
