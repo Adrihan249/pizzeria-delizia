@@ -99,6 +99,32 @@ python run.py
 ```
 http://localhost:5000
 ```
+## 🔀 Flujo de Trabajo con Git
+
+Para mantener un desarrollo organizado, se aplicó un flujo de trabajo basado en ramas y commits atómicos.
+
+### 📂 Ramas
+- **main** → rama principal y estable.  
+- **feature/nombre** → nuevas funcionalidades.  
+- **fix/nombre** → correcciones de errores.  
+
+### 📝 Estilo de Commits
+Mensajes claros y descriptivos.  
+Ejemplos:  
+- `feature: agregar vista de catálogo de productos`  
+- `fix: corregir validación en el login`  
+
+### ⚡ Uso de comandos Git
+Se documenta el uso de comandos clave:  
+- `git switch -c feature/catalogo` → crear rama para el catálogo.  
+- `git restore app/templates/cliente/home.html` → restaurar un archivo modificado por error.  
+- `git reset --hard HEAD~1` → deshacer el último commit.  
+- `git checkout main` → volver a la rama principal.  
+- `git merge feature/catalogo` → fusión de la nueva funcionalidad.  
+
+### 🔁 Pull Requests y Conflictos
+- Cada cambio mayor se fusiona a **main** mediante **Pull Request**.  
+- Se resolvió un conflicto en `models.py` durante la fusión de ramas, manteniendo la versión más actualizada.  
 
 ## 👤 Roles
 
