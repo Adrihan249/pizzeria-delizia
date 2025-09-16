@@ -125,7 +125,20 @@ Se documenta el uso de comandos clave:
 ### 🔁 Pull Requests y Conflictos
 - Cada cambio mayor se fusiona a **main** mediante **Pull Request**.  
 - Se resolvió un conflicto en `models.py` durante la fusión de ramas, manteniendo la versión más actualizada.  
-
+## 🖼️ Capturas de Pantalla
+---
+### 🏠 Página Principal
+---
+![Página principal](./screenshots/home.png)
+---
+### 🛍️ Lista de Productos
+---
+![Lista productos](./screenshots/home.png)
+---
+### 📘 Zona Administrativa
+---
+![Zona Administrativa](./screenshots/home.png)
+---
 ## 👤 Roles
 
 - **Cliente:** Puede ver el catálogo, seleccionar productos, enviar pedidos.
