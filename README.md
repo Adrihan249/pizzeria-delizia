@@ -133,11 +133,11 @@ Se documenta el uso de comandos clave:
 ---
 ### 🛍️ Lista de Productos
 ---
-![Lista productos](./screenshots/home.png)
+![Lista productos](./screenshots/lista.png)
 ---
 ### 📘 Zona Administrativa
 ---
-![Zona Administrativa](./screenshots/home.png)
+![Zona Administrativa](./screenshots/zona.png)
 ---
 ## 👤 Roles
 
